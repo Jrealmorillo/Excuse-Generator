@@ -1,1 +1,42 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  text-align: center;
+}
+
+.scale-up-left {
+  animation: scale-up-left 0.5s;
+}
+@keyframes scale-up-left {
+  0% {
+    transform: scale(0.5);
+    transform-origin: left center;
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: left center;
+  }
+}
+
+.scale-up-horizontal-right {
+  animation: scale-up-horizontal-right 3s;
+}
+@keyframes scale-up-horizontal-right {
+  0% {
+    transform: scaleX(0.4);
+    transform-origin: right center;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: right center;
+  }
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 90px;
+  margin: 200px;
+}
+footer {
+  font-size: 20px;
+}
