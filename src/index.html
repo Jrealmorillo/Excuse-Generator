@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Excuses & Co.</title>
     <link
       rel="stylesheet"
@@ -10,24 +13,59 @@
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="scale-up-left" id="excuse"></h1>
+    <div
+      class="container-fluid col-12 d-flex align-items-center justify-content-center"
+    >
+      <img
+        src="src/assets/img/excuse.jpg"
+        alt="What's your daily excuse?"
+        class="scale-up-vertical-top m-5 p-1"
+      />
     </div>
-    <div>
-      <footer class="scale-up-horizontal-right">
-        <i
-          >&copy; Please be aware this is a professional excuse generator I
-          created for my personal use and all excuses provided are...fake I am
-          afraid!</i
+
+    <div
+      class="container-fluid col-12 d-flex align-items-center justify-content-center"
+    >
+      <p>
+        <button
+          class="btn btn-dark d-flex align-items-center"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExcuse"
+          aria-expanded="false"
+          aria-controls="collapseExcuse"
         >
-        😅
-        <br /><i
-          >However, you are more than welcome to use it for yourself in case you
-          find it helpful.</i
+          Click here to get your daily excuse...and click again to get a new
+          one!
+        </button>
+      </p>
+    </div>
+    <div
+      class="d-flex justify-content-center align-items-center"
+      style="min-height: 120px;"
+    >
+      <div class="collapse collapse-horizontal" id="collapseExcuse">
+        <div
+          class="card card-body d-flex align-items-center border border-5 border-dark"
+          style="width: 500px; height: 250px;"
         >
+          <h3 class="scale-up-left justify-content-center" id="excuse"></h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 container-fluid text-center">
+      <footer
+        class="scale-up-horizontal-right fst-italic justify-content-center text-align-center fs-5 p-4"
+      >
+        &copy; Please be aware this is a professional excuse generator I created
+        for my personal use and all excuses provided are...fake I am
+        afraid!<span class="fst-normal">😅</span>
+        <br />
+        However, you are more than welcome to use them for yourself in case you
+        find them helpful. Some of them even might work!!
       </footer>
       <script type="text/javascript" src="script.js"></script>
     </div>

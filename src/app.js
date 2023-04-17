@@ -5,7 +5,7 @@ window.onload = function() {
   //write your code here
   let who = [
     "the dog ",
-    "my cousin ",
+    "my cousin Fernando ",
     "my friend Álvaro ",
     "the neighbour from 4º C ",
     "the Postman ",
@@ -15,14 +15,7 @@ window.onload = function() {
     "Tina Turner herself "
   ];
 
-  let action = [
-    "hid ",
-    "burned down ",
-    "stole ",
-    "broke ",
-    "lost ",
-    "crushed "
-  ];
+  let action = ["hid ", "burnt down ", "stole ", "broke ", "lost ", "crushed "];
 
   let what = [
     "my laptop ",
@@ -30,20 +23,20 @@ window.onload = function() {
     "my wallet ",
     "my bootcamp notes ",
     "the house keys ",
-    "the car wheel "
+    "the car wheels "
   ];
   let when = [
-    "this morning ",
-    "yesterday evening ",
-    "when I finished breakfast ",
-    "during last night dinner ",
-    "while I was watching TV ",
-    "after the football match ",
-    "before I went to work "
+    "this morning. ",
+    "yesterday evening. ",
+    "when I finished breakfast. ",
+    "during last night dinner. ",
+    "while I was watching TV. ",
+    "after the football match. ",
+    "before I went to work. "
   ];
 
-  function cambiarColorFondo() {
-    let colores = [
+  function changeBackgroundColor() {
+    let colors = [
       "rgb(244,67,54)",
       "rgb(233,30,99)",
       "rgb(156,39,176)",
@@ -63,21 +56,32 @@ window.onload = function() {
       "rgb(158,158,158)",
       "rgb(96,125,139)"
     ];
-    let colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
-    document.body.style.backgroundColor = colorAleatorio;
+    let randomColors = colors[Math.floor(Math.random() * colors.length)];
+    document.body.style.backgroundColor = randomColors;
   }
 
-  cambiarColorFondo();
+  function generateExcuse() {
+    let [randomWho, randomAction, randomWhat, randomWhen] = [
+      Math.floor(Math.random() * who.length),
+      Math.floor(Math.random() * action.length),
+      Math.floor(Math.random() * what.length),
+      Math.floor(Math.random() * when.length)
+    ];
+    return (
+      "Believe it or not, I could not make it because " +
+      who[randomWho] +
+      action[randomAction] +
+      what[randomWhat] +
+      when[randomWhen] +
+      " I know it sounds weird but I swear it!"
+    );
+  }
 
-  let randomWho = Math.floor(Math.random() * who.length);
-  let randomAction = Math.floor(Math.random() * action.length);
-  let randomWWhat = Math.floor(Math.random() * what.length);
-  let randomWhen = Math.floor(Math.random() * when.length);
+  let excuseElement = document.querySelector("#excuse");
 
-  document.querySelector("#excuse").innerHTML =
-    "Believe it or not, but " +
-    who[randomWho] +
-    action[randomAction] +
-    what[randomWWhat] +
-    when[randomWhen];
+  document.querySelector("button").addEventListener("click", function() {
+    let excuse = generateExcuse();
+    excuseElement.innerHTML = excuse;
+    changeBackgroundColor();
+  });
 };
