@@ -25,6 +25,7 @@ window.onload = function() {
     "the house keys ",
     "the car wheels "
   ];
+
   let when = [
     "this morning. ",
     "yesterday evening. ",
